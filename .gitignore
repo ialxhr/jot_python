@@ -1,25 +1,52 @@
-# Python bytecode and caches
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
+# Виртуальные окружения Python (зависимости)
 .venv/
 venv/
 env/
+ENV/
+pyvenv.cfg
 
-# IDE and OS files
-.vscode/
+# Кэш компиляции Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Секреты и настройки (переменные окружения)
+.env
+.env.*
+!.env.example
+.secrets
+secrets/
+config.local.*
+settings.local.*
+
+# Конфигурации редакторов кода
 .idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Системные файлы
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Local logs and temporary files
+# Логи и результаты тестов
 *.log
-*.tmp
-*.bak
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Local notes and personal data (uncomment/adjust if needed)
-# notes/
-# *.md
+# Резервные копии и временные файлы
+*.bak
+*.tmp
+*.orig
+*~
+
+# Сборка и дистрибутивы Python
+build/
+dist/
+*.egg-info/
