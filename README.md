@@ -1,4 +1,4 @@
-# Быстрый Заметчик (Obsidian)
+# Быстрый Заметчик (jot-to-obsidian)
 
 Лёгкое приложение для заметок на Python с интерфейсом Tkinter.
 
@@ -15,7 +15,7 @@
 3. В папке с приложением выполните:
 
    ```powershell
-   python app_fixed.py
+   python jot.py
    ```
 
 ## Зависимости
