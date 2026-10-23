@@ -1,0 +1,35 @@
+name: Build Windows x64 EXE
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "jot.py"
+      - ".github/workflows/build-windows.yml"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python x64
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          architecture: "x64"
+
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Build executable
+        run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name Jot jot.py
+
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jot-Windows-10-x64
+          path: dist/Jot.exe
+          if-no-files-found: error
+          retention-days: 30
